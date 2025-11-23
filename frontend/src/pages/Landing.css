@@ -1,0 +1,61 @@
+/* simple centered landing styles */
+.landing-root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/user-engagement.webp');
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.landing-card {
+  max-width: 980px;
+  width: 100%;
+  background: #061026;
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 2rem;
+  border-radius: 12px;
+  color: #e6eef8;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.landing-svg { width: 100%; height: 220px; border-radius: 8px; display:block; }
+
+.landing-title { margin: 0; font-size: 1.6rem; color: #f3f7ff; }
+.landing-sub { margin: 0; color: #9fb7d9; }
+
+.landing-actions {
+  display:flex;
+  gap: 1rem;
+  align-items:center;
+  justify-content:center;
+  margin-top: 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg,#2563eb,#34d399);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover { opacity: 0.95; transform: translateY(-1px); }
+
+.btn-ghost {
+  color: #9fb7d9;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: transparent;
+  cursor: pointer;
+}

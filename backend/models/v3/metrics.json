@@ -1,0 +1,27 @@
+{
+  "data_file": "Python Application Usage Log Data Set.xlsx",
+  "holdout_days": 28,
+  "MAE": 215.09990567728673,
+  "RMSE": 302.39741159096815,
+  "MAPE": 6.799714554104687,
+  "Accuracy(1-MAPE)": 93.20028544589532,
+  "Prophet_only_MAPE": 10.527709208715768,
+  "best_lstm_cfg": {
+    "units": 96,
+    "dropout": 0.15,
+    "window": 21
+  },
+  "alpha": 0.2011706218875223,
+  "beta": 0.05165869146926924,
+  "dow_bias_used": true,
+  "prophet_top2": [
+    {
+      "changepoint_prior_scale": 1.0,
+      "seasonality_mode": "multiplicative"
+    },
+    {
+      "changepoint_prior_scale": 0.8,
+      "seasonality_mode": "multiplicative"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# --- Python / Django ---
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+db.sqlite3
+
+# Django local stuff
+/media/
+staticfiles/
+
+# --- ML models / large artifacts ---
+backend/forecast/models/v3/
+backend/forecast/models/v4/
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+
+# --- Node / React (frontend) ---
+frontend/node_modules/
+frontend/dist/
+
+# --- OS / Editor junk ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
