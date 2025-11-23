@@ -9,6 +9,7 @@ export default function ForcastingPage({
     setModelType,
     result,
     loading,
+    loadingStage, 
     errorMsg,
     startDate,
     setStartDate,
@@ -98,7 +99,14 @@ export default function ForcastingPage({
             </aside>
 
             <main className="fp-main">
-                {!result ? (
+                {loading ? (
+                    <div className="fp-loading">
+                        <div className="fp-loading-spinner"></div>
+                        <h2 style={{ marginTop: 16, color: "#60a5fa" }}>
+                            {loadingStage || "Processing..."}
+                        </h2>
+                    </div>
+                ) : !result ? (
                     <div className="fp-empty">
                         <div>
                             <h2>Ready to generate a forecast</h2>

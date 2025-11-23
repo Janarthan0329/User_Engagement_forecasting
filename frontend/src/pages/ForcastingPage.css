@@ -230,6 +230,30 @@
   display: block;
 }
 
+/* Add to ForcastingPage.css */
+.fp-loading {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.fp-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #2563eb;
+  border-top: 5px solid #34d399;
+  border-radius: 50%;
+  animation: fp-spin 1s linear infinite;
+  margin-bottom: 18px;
+}
+@keyframes fp-spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
 
 @media (max-width: 480px) {
   .fp-modal-content { padding: 14px; border-radius: 8px; }

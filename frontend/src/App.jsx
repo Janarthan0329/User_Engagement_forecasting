@@ -10,6 +10,7 @@ export default function App() {
   const [modelType, setModelType] = useState("v4");
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [loadingStage, setLoadingStage] = useState(""); // NEW
   const [errorMsg, setErrorMsg] = useState("");
   const [startDate, setStartDate] = useState("");
 
@@ -33,6 +34,8 @@ export default function App() {
       return;
     }
 
+    setLoading(true);
+    setLoadingStage("Processing your data...");
     const formData = new FormData();
     formData.append("file", file);
     formData.append("horizon", String(horizon));
@@ -40,7 +43,17 @@ export default function App() {
     formData.append("start_date", startDate || "");
 
     try {
-      setLoading(true);
+      // Simulate step 1: processing data
+      setLoadingStage("Processing your data...");
+      await new Promise((r) => setTimeout(r, 400)); // optional: fake delay
+
+      // Simulate step 2: generating forecast
+      setLoadingStage("Generating forecast...");
+      await new Promise((r) => setTimeout(r, 400)); // optional: fake delay
+
+      // Simulate step 3: generating plots
+      setLoadingStage("Generating plots and graph...");
+      // Actually send request
       const res = await fetch("http://127.0.0.1:8000/api/forecast/", {
         method: "POST",
         body: formData,
@@ -53,10 +66,13 @@ export default function App() {
 
       const data = await res.json();
       setResult(data);
+      setLoadingStage("Ready to forecast!"); // Final stage
     } catch (err) {
       setErrorMsg(err.message || String(err));
+      setLoadingStage("");
     } finally {
       setLoading(false);
+      setTimeout(() => setLoadingStage(""), 1000); // Clear after short delay
     }
   };
 
@@ -73,6 +89,7 @@ export default function App() {
       setModelType={setModelType}
       result={result}
       loading={loading}
+      loadingStage={loadingStage} // NEW
       errorMsg={errorMsg}
       startDate={startDate}
       setStartDate={setStartDate}
